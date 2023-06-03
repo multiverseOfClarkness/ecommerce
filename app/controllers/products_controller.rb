@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
+  
+  
 
   def index
     @products = Product.all
@@ -45,6 +47,10 @@ class ProductsController < ApplicationController
 
     redirect_to products_path, status: :see_other
   end
+
+  def to_cart
+
+  end  
 
   private
 
