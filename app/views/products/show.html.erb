@@ -13,10 +13,10 @@
                   } %> <br>
   <%= link_to "Return", products_path %>
 
-<% elsif user_signed_in? %>  
+<% elsif customer_signed_in? %>  
 
   <p>Add to cart</p>
-  
+
 <% else %>
   <%= link_to "Return", products_path %>
 <% end %>
