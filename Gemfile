@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.0"
+ruby "3.2.2"
 
 #Devise
 gem 'devise'
@@ -75,7 +75,6 @@ group :test do
   gem "webdrivers"
 end
 
-gem "tailwindcss-rails", "~> 2.0"
-gem "simple_form"
-gem "simple_form-tailwind"
+gem "tailwindcss-rails"
+
 
