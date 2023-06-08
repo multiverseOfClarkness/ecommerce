@@ -2,6 +2,9 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
+gem 'listen'
+gem 'guard', '~> 2.18'
+gem 'guard-shell'
 
 #Devise
 gem 'devise'
