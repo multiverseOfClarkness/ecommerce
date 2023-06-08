@@ -13,8 +13,11 @@
 
   <body>
     <%= render "layouts/nav" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="flex px-6 pt-14 lg:px-8 items-center justify-center">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
+    
   </body>
 </html>
