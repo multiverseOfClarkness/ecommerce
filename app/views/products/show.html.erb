@@ -16,7 +16,7 @@
 <% elsif customer_signed_in? %>  
 
   <p>Add to cart</p>
-
+  <%= link_to "Return", products_path %>
 <% else %>
   <%= link_to "Return", products_path %>
 <% end %>

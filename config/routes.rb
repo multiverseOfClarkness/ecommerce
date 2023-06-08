@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :customers
+  get 'home/home'
+  # config/routes.rb
+  devise_for :admins, controllers: { sessions: 'sessions' }
+  devise_for :customers, controllers: { sessions: 'sessions' }
+
   
-  root "login#index"
+  root "home#home"
 
   resources :products
 end

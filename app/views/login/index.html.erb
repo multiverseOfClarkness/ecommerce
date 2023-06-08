@@ -5,7 +5,9 @@
     <p><%= link_to "Sign_out", destroy_customer_session_path, 'data-turbo-method': :delete %> </p>
     
 <% else %>
-    <p><%= link_to "Login", new_customer_session_path %></p>
+    <p><%= link_to "Login Admin", new_admin_session_path %></p>
+    <p><%= link_to "Login Customer", new_customer_session_path %></p>
+
 <% end %>
 
 <p><%= link_to "Browse products", products_path %></p>

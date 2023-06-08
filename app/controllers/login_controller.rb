@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
-  def index
+  def new
+    render 'devise/sessions/new'
   end
 end
