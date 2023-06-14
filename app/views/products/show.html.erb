@@ -35,10 +35,11 @@
       </button>
 
     <% elsif customer_signed_in? %>  
-
-      <p>Add to cart</p>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
         <%= link_to "Return", products_path %>
+      </button>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <%= link_to "Add to cart", products_path %>
       </button>
     <% else %>
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
