@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'home/home'
   # config/routes.rb
-  devise_for :admins, controllers: { sessions: 'sessions' }
   devise_for :users, controllers: { sessions: 'sessions' }
 
   
