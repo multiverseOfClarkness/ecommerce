@@ -5,6 +5,7 @@ ruby "3.2.2"
 gem 'listen'
 gem 'guard', '~> 2.18'
 gem 'guard-shell'
+gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
 #Devise
 gem 'devise'
