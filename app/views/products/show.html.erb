@@ -1,19 +1,19 @@
-<div class="flex flex-wrap flex-col items-center border-2 border-gray-400 p-11 my-2 rounded mx-10">
-  <div class="flex-initial h-5 m-3 ">
+<div class="bg-slate-200 flex flex-wrap flex-col items-center border-2 border-gray-400  my-2 rounded mx-10 inline-block min-w-min min-h-min">
+  <div class="flex-initial h-5 m-3 inline-block min-w-min min-h-min">
     <h1 class="text-gray-500 text-3xl font-mono font-bold "><%= @product.name%></h1>
   </div>
-  <div class="flex-initial h-6 m-3">
+  <div class="flex-initial h-6 m-3 inline-block min-w-min min-h-min">
     <p class="text-xl">Description: <%= @product.description %></p>
   </div>
-  <div class="flex-initial h-6 m-3 text-orange-500">
-    <p class="text-xl">PHP <%= @product.price %></p>
+  <div class="flex-initial h-6 m-3 inline-block min-w-min min-h-min">
+    <p class="text-xl text-orange-500">PHP <%= @product.price %></p>
   </div>
-  <div class="flex-initial h-6">
+  <div class="flex-initial h-6 inline-block min-w-min min-h-min">
     <p class="text-sm">Stocks Left: <%= @product.quantity %></p>
   </div>
 
 
-  <div class="flex-wrap flex-initial h-6 m-2">
+  <div class="flex-initial h-8 m-2 inline-block min-w-min min-h-min">
     
     
     <% if user_signed_in? && current_user.role_id == 1 %>
@@ -29,7 +29,7 @@
                       } %> <br>
       </button>
 
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ">
 
         <%= link_to "Return", products_path %>
       </button>
@@ -42,10 +42,11 @@
         <%= link_to "Add to cart", products_path %>
       </button>
     <% else %>
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ">
         <%= link_to "Return", products_path %>
       </button>
     <% end %>
     
   </div>
 </div>
+
