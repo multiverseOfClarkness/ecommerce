@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
+  before_action :validate_role, except: [:index, :show]
   
   
 
@@ -57,4 +57,11 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :price, :quantity)
   end
+
+  def validate_role
+    unless current_user&.role_id == 1
+      redirect_to root_path, alert: "You are not authorized to access this page."
+    end
+  end
+
 end
