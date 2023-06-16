@@ -4,6 +4,7 @@ class User < ApplicationRecord
   
 
   belongs_to :role, foreign_key: :role_id
+  has_one :cart
   has_many :orders
 
   devise :database_authenticatable, :registerable,
