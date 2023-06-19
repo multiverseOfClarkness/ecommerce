@@ -1,5 +1,40 @@
 <% if user_signed_in? && current_user.cart %>
-<h1>hi</h1>
+<div class="flex flex-wrap flex-col justify-center m-7"><br />
+  <h1 class="caption text-lg font-bold text-center text-black bg-slate-300 p-2">
+  <%= current_user.email %>'s Cart
+  </h1>
+  <table class="table table-auto border-2 border-slate-300 h-10">
+    <thead >
+      <tr>
+        <th class="p-2 text-left">Product</th>
+        <th class="p-2 text-left">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @cart.line_items.each do |line_item| %>
+      <tr>
+        <td class="p-2"><%= line_item.product.name %></td>
+        <td class="p-2"><%= line_item.product.price %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+
+  
+</div>
+
+<div class="flex justify-end  m-7">
+  <%= link_to "Continue Shopping", products_path, class: "mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" %>
+</div>
+<% elsif user_signed_in? && current_user.cart.present? %>
+<div class="flex flex-wrap flex-col justify-center m-7">
+  <h1 class="caption text-lg font-bold text-center text-black bg-slate-300 p-2">
+  <%= current_user.email %>'s Cart is empty.
+  </h1>
+</div>
+<div class="flex justify-end  m-7">
+  <%= link_to "Continue Shopping", products_path, class: "mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" %>
+</div>
 <% else %>
 <h2>hello</h2>
 <% end %>
