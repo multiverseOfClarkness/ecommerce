@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.cart %>
+<% if user_signed_in? && current_user.cart.present? %>
 <div class="flex flex-wrap flex-col justify-center m-7"><br />
   <h1 class="caption text-lg font-bold text-center text-black bg-slate-300 p-2">
   <%= current_user.email %>'s Cart
@@ -26,7 +26,7 @@
 <div class="flex justify-end  m-7">
   <%= link_to "Continue Shopping", products_path, class: "mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" %>
 </div>
-<% elsif user_signed_in? && current_user.cart.present? %>
+<% else %>
 <div class="flex flex-wrap flex-col justify-center m-7">
   <h1 class="caption text-lg font-bold text-center text-black bg-slate-300 p-2">
   <%= current_user.email %>'s Cart is empty.
@@ -35,6 +35,4 @@
 <div class="flex justify-end  m-7">
   <%= link_to "Continue Shopping", products_path, class: "mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" %>
 </div>
-<% else %>
-<h2>hello</h2>
 <% end %>
