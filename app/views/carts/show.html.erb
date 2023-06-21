@@ -8,16 +8,21 @@
       <tr>
         <th class="p-2 text-left">Product</th>
         <th class="p-2 text-left">Price</th>
+        <th class="p-2 text-left">Quantity</th>
       </tr>
     </thead>
+    
     <tbody>
-    <% @cart.line_items.each do |line_item| %>
-      <tr>
-        <td class="p-2"><%= line_item.product.name %></td>
-        <td class="p-2"><%= line_item.product.price %></td>
-      </tr>
+      <% current_user.cart.line_items.each do |line_item| %>
+        <tr>
+          <td class="p-2"><%= line_item.product.name %></td>
+          <td class="p-2"><%= line_item.product.price %></td>
+          <td class="p-2"><%= line_item.quantity %></td>
+        </tr>
+      <% end %>
     </tbody>
-    <% end %>
+
+    
   </table>
 
   
@@ -32,7 +37,7 @@
   <%= current_user.email %>'s Cart is empty.
   </h1>
 </div>
-<div class="flex justify-end  m-7">
+<div class="flex justify-end m-7">
   <%= link_to "Continue Shopping", products_path, class: "mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md" %>
 </div>
 <% end %>

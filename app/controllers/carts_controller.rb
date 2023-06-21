@@ -3,7 +3,10 @@ class CartsController < ApplicationController
 
   def show
     @cart = current_user.cart
+    @line_items = @cart.line_items.includes(:product) if @cart.present?
   end
+  
+  
 
   def update
     @cart = current_user.cart
@@ -15,11 +18,23 @@ class CartsController < ApplicationController
   end
 
   def add_item
-    @cart = current_user.cart || current_user.create_cart
-    @product = Product.find(params[:product_id])
-    @cart.line_items.create(product: @product)
-    redirect_to cart_path, notice: 'Item added to cart.'
+    product = Product.find(params[:product_id])
+    quantity = params[:quantity].to_i
+  
+    # Check if the current user has a cart, create one if not
+    cart = current_user.cart || current_user.create_cart
+  
+    if quantity > 0
+      line_item = cart.line_items.find_or_initialize_by(product_id: product.id)
+  
+      line_item.quantity += quantity
+      line_item.save
+    end
+  
+    redirect_to cart_path
   end
+  
+  
 
   
   def remove_item
