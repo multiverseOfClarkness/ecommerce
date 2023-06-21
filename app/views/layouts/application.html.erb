@@ -16,10 +16,12 @@
   <body>
     <%= render "layouts/nav" %>
     
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-
+    
     <div class="relative">
+    <div class="flex justify-center text-xl bg-transparent bg-opacity-0 ">
+      <p class="notice bg-transparent "><%= notice %></p>
+      <p class="alert bg-transparent text-red-500"><%= alert %></p>
+    </div>
     <%= yield %>
     </div>  
     
